@@ -20,8 +20,8 @@ public class MicroservicioMapaApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         buildingRepository.save(new Building(1L, 0, 0, 0, 90, 100));
-        buildingRepository.save(new Building(2L, 0, 3, 0, 90, 100));
+        buildingRepository.save(new Building(2L, 0, 4, 0, 90, 100));
         buildingRepository.save(new Building(3L, 2, 4, 0, 90, 100));
-        buildingRepository.save(new Building(4L, 4, 3, 0, 90, 100));
+        buildingRepository.save(new Building(4L, 4, 5, 0, 90, 100));
     }
 }

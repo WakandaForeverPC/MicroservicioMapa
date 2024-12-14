@@ -9,20 +9,21 @@ body {
 
 #board {
     display: grid;
-    grid-template-columns: repeat(7, 100px); /* Increase columns to 8 to include road cells */
-    grid-template-rows: repeat(6, 100px);
+    grid-template-columns: 130px 70px 130px 70px 130px 70px 130px 70px 130px;
+    grid-template-rows: 130px 130px 130px 70px 130px 130px 130px;
     gap: 2px;
     background-color: #aaa;
     margin-top: 20px;
 }
 
 .cell {
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
     background-color: #c4c4c4;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .building {
@@ -35,6 +36,84 @@ body {
     border-radius: 5px;
 }
 
-.road {
+.vertical-road {
     background-color: #333;
+}
+
+.vertical-road::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background: repeating-linear-gradient(
+            to bottom,
+            white,
+            white 10px,
+            transparent 10px,
+            transparent 20px
+    );
+    transform: translateX(-50%);
+}
+
+.horizontal-road {
+    background-color: #333;
+}
+
+.horizontal-road::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: repeating-linear-gradient(
+            to right,
+            white,
+            white 10px,
+            transparent 10px,
+            transparent 20px
+    );
+    transform: translateY(-50%);
+}
+
+.intersection-road {
+    background-color: #333;
+}
+
+.intersection-road::before,
+.intersection-road::after {
+    content: '';
+    position: absolute;
+}
+
+.intersection-road::before {
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: repeating-linear-gradient(
+            to right,
+            white,
+            white 10px,
+            transparent 10px,
+            transparent 20px
+    );
+    transform: translateY(-50%);
+}
+
+.intersection-road::after {
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background: repeating-linear-gradient(
+            to bottom,
+            white,
+            white 10px,
+            transparent 10px,
+            transparent 20px
+    );
+    transform: translateX(-50%);
 }

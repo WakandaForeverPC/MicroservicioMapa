@@ -1,15 +1,27 @@
 const board = document.getElementById('board');
-const gridWidth = 7; // Increase width to 8 to include road cells
-const gridHeight = 6;
+const gridWidth = 9; // columnas
+const gridHeight = 7; // filas
 
-// Create an empty board with road cells
+// tablero vacio columnas y filas
 for (let i = 0; i < gridWidth * gridHeight; i++) {
     const cell = document.createElement('div');
-    if ((i % gridWidth === 1) || (i % gridWidth === 3) || (i % gridWidth === 5)) {
-        cell.classList.add('cell', 'road'); // Add road class to simulate road
+    const row = Math.floor(i / gridWidth); // Fila actual
+    const col = i % gridWidth;            // Columna actual
+
+    if (row === 3 && (col === 1 || col === 3 || col === 5 || col === 7)) {
+        // Intersección de carreteras horizontal y vertical
+        cell.classList.add('cell', 'intersection-road');
+    } else if (row === 3) {
+        // Carretera horizontal
+        cell.classList.add('cell', 'horizontal-road');
+    } else if (col === 1 || col === 3 || col === 5 || col === 7) {
+        // Carreteras verticales
+        cell.classList.add('cell', 'vertical-road');
     } else {
+        // Celda normal
         cell.classList.add('cell');
     }
+
     board.appendChild(cell);
 }
 
