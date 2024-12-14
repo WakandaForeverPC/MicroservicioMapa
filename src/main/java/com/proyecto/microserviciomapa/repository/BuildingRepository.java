@@ -1,6 +1,6 @@
-package com.proyect.microserviciomapa.repository;
+package com.proyecto.microserviciomapa.repository;
 
-import com.proyect.microserviciomapa.model.Building;
+import com.proyecto.microserviciomapa.model.Building;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,7 +1,7 @@
-package com.proyect.microserviciomapa.controller;
+package com.proyecto.microserviciomapa.controller;
 
-import com.proyect.microserviciomapa.model.Building;
-import com.proyect.microserviciomapa.service.CityService;
+import com.proyecto.microserviciomapa.model.Building;
+import com.proyecto.microserviciomapa.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/ciudad")
+@RequestMapping("/mapa")
 public class MapaController {
 
     @Autowired

@@ -1,4 +1,4 @@
-package com.proyect.microserviciomapa.model;
+package com.proyecto.microserviciomapa.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

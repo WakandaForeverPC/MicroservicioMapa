@@ -26,7 +26,7 @@ for (let i = 0; i < gridWidth * gridHeight; i++) {
 }
 
 // Fetch buildings from the server and place them on the board
-fetch('/ciudad/edificios')
+fetch('/mapa/edificios')
     .then(response => response.json())
     .then(buildings => {
         buildings.forEach(building => {
