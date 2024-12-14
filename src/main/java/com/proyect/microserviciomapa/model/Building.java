@@ -1,11 +1,10 @@
-package com.proyect.microserviciomapa;
+package com.proyect.microserviciomapa.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+
 
 @Entity
-@Table(name = "building")
 public class Building {
 
     @Id
@@ -15,14 +14,22 @@ public class Building {
     private int z;
     private int width;
     private int height;
-    private int depth;
-    private String color;
 
     // No-argument constructor
     public Building() {
     }
 
-    // Getters and setters
+    // Constructor with parameters
+    public Building(Long id, int x, int y, int z, int width, int height) {
+        this.id = id;
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.width = width;
+        this.height = height;
+
+    }
+
     public Long getId() {
         return id;
     }
@@ -69,21 +76,4 @@ public class Building {
 
     public void setHeight(int height) {
         this.height = height;
-    }
-
-    public int getDepth() {
-        return depth;
-    }
-
-    public void setDepth(int depth) {
-        this.depth = depth;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-}
+    }}

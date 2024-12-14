@@ -1,6 +1,6 @@
 package com.proyect.microserviciomapa.service;
 
-import com.proyect.microserviciomapa.Building;
+import com.proyect.microserviciomapa.model.Building;
 import com.proyect.microserviciomapa.repository.BuildingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

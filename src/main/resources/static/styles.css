@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(7, 100px); /* Increase columns to 8 to include road cells */
+    grid-template-rows: repeat(6, 100px);
+    gap: 2px;
+    background-color: #aaa;
+    margin-top: 20px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #c4c4c4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.building {
+    width: 80px;
+    height: 80px;
+    background-color: #4287f5;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+.road {
+    background-color: #333;
+}
