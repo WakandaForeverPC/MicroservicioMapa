@@ -39,6 +39,7 @@ fetch('/mapa/edificios')
                 buildingDiv.classList.add('building');
                 buildingDiv.style.width = `${building.width}px`;
                 buildingDiv.style.height = `${building.height}px`;
+                buildingDiv.style.backgroundColor = building.color; // Asignar el color del edificio
 
                 cell.appendChild(buildingDiv);
             }

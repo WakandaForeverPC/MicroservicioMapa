@@ -11,7 +11,6 @@ body {
     display: grid;
     grid-template-columns: 130px 70px 130px 70px 130px 70px 130px 70px 130px;
     grid-template-rows: 130px 130px 130px 70px 130px 130px 130px;
-    gap: 2px;
     background-color: #aaa;
     margin-top: 20px;
 }
@@ -29,7 +28,6 @@ body {
 .building {
     width: 80px;
     height: 80px;
-    background-color: #4287f5;
     color: white;
     text-align: center;
     font-size: 12px;
@@ -139,4 +137,26 @@ body {
 
 .traffic-light.green {
     background-color: #00ff00; /* Color verde para el semáforo en verde */
+}
+#button-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#water-management-button {
+    padding: 20px;
+    font-size: 32px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#water-management-button i {
+    margin-right: 5px;
 }

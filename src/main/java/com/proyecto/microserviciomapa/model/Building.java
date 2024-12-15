@@ -14,19 +14,21 @@ public class Building {
     private int z;
     private int width;
     private int height;
+    private String color;
 
     // No-argument constructor
     public Building() {
     }
 
     // Constructor with parameters
-    public Building(Long id, int x, int y, int z, int width, int height) {
+    public Building(Long id, int x, int y, int z, int width, int height, String color) {
         this.id = id;
         this.x = x;
         this.y = y;
         this.z = z;
         this.width = width;
         this.height = height;
+        this.color = color;
 
     }
 
@@ -76,4 +78,13 @@ public class Building {
 
     public void setHeight(int height) {
         this.height = height;
-    }}
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+}
