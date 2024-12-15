@@ -29,6 +29,7 @@ for (let i = 0; i < gridWidth * gridHeight; i++) {
 fetch('/mapa/edificios')
     .then(response => response.json())
     .then(buildings => {
+        console.log('Buildings data:', buildings); // Log the buildings data
         buildings.forEach(building => {
             if (building.x >= 0 && building.x < gridWidth && building.y >= 0 && building.y < gridHeight) {
                 const index = building.y * gridWidth + building.x;
@@ -38,14 +39,12 @@ fetch('/mapa/edificios')
                 buildingDiv.classList.add('building');
                 buildingDiv.style.width = `${building.width}px`;
                 buildingDiv.style.height = `${building.height}px`;
-                buildingDiv.textContent = `Building ${building.id}`;
 
                 cell.appendChild(buildingDiv);
             }
         });
     })
     .catch(error => console.error('Error fetching buildings:', error));
-
 // Actualización dinámica de coches y semáforos
 function fetchAndUpdateTraffic() {
     // Limpiar elementos dinámicos
@@ -55,18 +54,22 @@ function fetchAndUpdateTraffic() {
     fetch('/traffic/cars')
         .then(response => response.json())
         .then(cars => {
-            cars.forEach(car => {
-                if (car.x >= 0 && car.x < gridWidth && car.y >= 0 && car.y < gridHeight) {
-                    const index = car.y * gridWidth + car.x;
-                    const cell = board.children[index];
+            if (Array.isArray(cars)) {
+                cars.forEach(car => {
+                    if (car.x >= 0 && car.x < gridWidth && car.y >= 0 && car.y < gridHeight) {
+                        const index = car.y * gridWidth + car.x;
+                        const cell = board.children[index];
 
-                    const carDiv = document.createElement('div');
-                    carDiv.classList.add('car');
-                    carDiv.textContent = `Car ${car.id}`;
-                    carDiv.setAttribute('data-id', car.id);
-                    cell.appendChild(carDiv);
-                }
-            });
+                        const carDiv = document.createElement('div');
+                        carDiv.classList.add('car');
+                        carDiv.style.backgroundColor = car.color; // Asignar el color del coche
+                        // No agregar texto al coche
+                        cell.appendChild(carDiv);
+                    }
+                });
+            } else {
+                console.error('Invalid cars response:', cars);
+            }
         })
         .catch(error => console.error('Error fetching cars:', error));
 
@@ -74,17 +77,21 @@ function fetchAndUpdateTraffic() {
     fetch('/traffic/traffic-lights')
         .then(response => response.json())
         .then(trafficLights => {
-            trafficLights.forEach(light => {
-                if (light.x >= 0 && light.x < gridWidth && light.y >= 0 && light.y < gridHeight) {
-                    const index = light.y * gridWidth + light.x;
-                    const cell = board.children[index];
+            if (Array.isArray(trafficLights)) {
+                trafficLights.forEach(light => {
+                    if (light.x >= 0 && light.x < gridWidth && light.y >= 0 && light.y < gridHeight) {
+                        const index = light.y * gridWidth + light.x;
+                        const cell = board.children[index];
 
-                    const lightDiv = document.createElement('div');
-                    lightDiv.classList.add('traffic-light', light.state.toLowerCase());
-                    lightDiv.textContent = `Light ${light.id}`;
-                    cell.appendChild(lightDiv);
-                }
-            });
+                        const lightDiv = document.createElement('div');
+                        lightDiv.classList.add('traffic-light', light.state.toLowerCase());
+                        // No agregar texto al semáforo
+                        cell.appendChild(lightDiv);
+                    }
+                });
+            } else {
+                console.error('Invalid traffic lights response:', trafficLights);
+            }
         })
         .catch(error => console.error('Error fetching traffic lights:', error));
 }
@@ -114,7 +121,7 @@ setInterval(toggleTrafficLights, 4000);
 setInterval(fetchAndUpdateTraffic, 2000);
 
 // WebSocket para actualizaciones en tiempo real
-const socket = new SockJS('/traffic-websocket');
+const socket = new SockJS('/mapa/traffic-websocket');
 const stompClient = Stomp.over(socket);
 
 stompClient.connect({}, () => {
