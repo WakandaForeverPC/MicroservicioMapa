@@ -14,6 +14,7 @@ body {
     grid-template-rows: 130px 130px 130px 70px 130px 130px 130px;
     background-color: #aaa;
     margin-top: 20px;
+    margin-left: 140px; /* Ajusta este valor según sea necesario */
 }
 
 .cell {
@@ -168,6 +169,15 @@ body {
     left: 10px;
     display: flex;
     gap: 10px;
+    padding: 20px;
+}
+#button-container-2 {
+    position: absolute;
+    top: 105px;
+    left: 10px;
+    display: flex;
+    gap: 10px;
+    padding: 20px;
 }
 /* boton agua */
 #water-management-button {
@@ -241,4 +251,48 @@ body {
 
 #transporte-management-button-management-button i {
     margin-right: 5px;
+}
+
+#emergencias-management-button {
+    padding: 20px;
+    font-size: 32px;
+    cursor: pointer;
+    background-color: #ff0016;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#emergencias-management-button i {
+    margin-right: 5px;
+}
+#salud-management-button {
+    padding: 20px;
+    font-size: 32px;
+    cursor: pointer;
+    background-color: #ff0016;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#salud-management-button i {
+    margin-right: 5px;
+}
+.button {
+    width: 85px; /* Ajusta este valor según sea necesario */
+    height: 85px; /* Ajusta este valor según sea necesario */
+    padding: 30px;
+    font-size: 32px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

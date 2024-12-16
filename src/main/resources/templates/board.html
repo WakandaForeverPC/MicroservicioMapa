@@ -9,17 +9,25 @@
 </head>
 <body>
 <div id="button-container">
-    <button id="water-management-button">
+    <button id="water-management-button" class="button" style="background-color: #007bff;">
         <i class="fas fa-tint"></i> <!-- Icono de gota de agua -->
     </button>
-    <button id="residuos-management-button">
+    <button id="residuos-management-button" class="button" style="background-color: #27893e;">
         <i class="fas fa-recycle"></i> <!-- Icono de reciclaje -->
     </button>
-    <button id="cultura-management-button">
+    <button id="cultura-management-button" class="button" style="background-color: #ff9800;">
         <i class="fas fa-book"></i> <!-- Icono de libro -->
     </button>
-    <button id="transporte-management-button">
+</div>
+<div id="button-container-2">
+    <button id="emergencias-management-button" class="button" style="background-color: #ff0016;">
+        <i class="fas fa-hospital"></i> <!-- Icono de emergencias -->
+    </button>
+    <button id="transporte-management-button" class="button" style="background-color: #4682b4;">
         <i class="fas fa-bus"></i> <!-- Icono de bus -->
+    </button>
+    <button id="salud-management-button" class="button" style="background-color: #ff69b4;">
+        <i class="fas fa-heartbeat"></i> <!-- Icono de salud -->
     </button>
 </div>
 <div id="board" class="board"></div>
@@ -38,6 +46,9 @@
     });
     document.getElementById('transporte-management-button').addEventListener('click', function() {
         window.location.href = 'http://localhost:8080/transporte';
+    });
+    document.getElementById('emergencias-management-button').addEventListener('click', function() {
+        window.location.href = 'http://localhost:8080/emergencias';
     });
 </script>
 </body>
