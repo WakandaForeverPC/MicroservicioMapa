@@ -12,7 +12,6 @@ body {
     display: grid;
     grid-template-columns: 130px 70px 130px 70px 130px 70px 130px 70px 130px;
     grid-template-rows: 130px 130px 130px 70px 130px 130px 130px;
-    gap: 2px;
     background-color: #aaa;
     margin-top: 20px;
 }
@@ -120,7 +119,7 @@ body {
 .bus {
     width: 60px;
     height: 30px;
-    background-color: blue; /* Color de fondo del bus */
+    background-color: #4682b4; /* Color de fondo del bus */
     border-radius: 5px; /* Bordes redondeados */
     display: flex;
     align-items: center;
@@ -209,4 +208,37 @@ body {
 .recycling-container {
     display: inline-block;
     margin: 0 1px;
+}
+
+#cultura-management-button {
+    padding: 20px;
+    font-size: 32px;
+    cursor: pointer;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cultura-management-button i {
+    margin-right: 5px;
+}
+#transporte-management-button {
+    padding: 20px;
+    font-size: 32px;
+    cursor: pointer;
+    background-color: #4682b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#transporte-management-button-management-button i {
+    margin-right: 5px;
 }

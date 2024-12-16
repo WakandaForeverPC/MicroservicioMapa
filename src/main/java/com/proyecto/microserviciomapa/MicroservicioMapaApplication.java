@@ -41,7 +41,7 @@ public class MicroservicioMapaApplication implements CommandLineRunner {
         buildingRepository.save(new Building(13L, 4, 0, 0, 90, 100, "#744e3b"));
         buildingRepository.save(new Building(14L, 4, 1, 0, 90, 100, "#744e3b"));
         buildingRepository.save(new Building(15L, 4, 2, 0, 90, 100, "#744e3b"));
-        buildingRepository.save(new Building(16L, 4, 4, 0, 90, 100, "#744e3b"));
+        buildingRepository.save(new Building(16L, 4, 4, 0, 90, 100, "#ff9800"));
         buildingRepository.save(new Building(17L, 4, 5, 0, 90, 100, "#744e3b"));
         buildingRepository.save(new Building(18L, 4, 6, 0, 90, 100, "#744e3b"));
 

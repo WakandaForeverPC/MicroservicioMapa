@@ -139,7 +139,7 @@ function fetchAndUpdateBuses() {
 
                         const busDiv = document.createElement('div');
                         busDiv.classList.add('bus');
-                        busDiv.style.backgroundColor = 'blue'; // Assign bus color
+                        busDiv.style.backgroundColor = '#4682b4'; // Assign bus color
                         cell.appendChild(busDiv);
                     }
                 });

@@ -15,6 +15,12 @@
     <button id="residuos-management-button">
         <i class="fas fa-recycle"></i> <!-- Icono de reciclaje -->
     </button>
+    <button id="cultura-management-button">
+        <i class="fas fa-book"></i> <!-- Icono de libro -->
+    </button>
+    <button id="transporte-management-button">
+        <i class="fas fa-bus"></i> <!-- Icono de bus -->
+    </button>
 </div>
 <div id="board" class="board"></div>
 <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
@@ -26,6 +32,12 @@
     });
     document.getElementById('residuos-management-button').addEventListener('click', function() {
         window.location.href = 'http://localhost:8080/residuos';
+    });
+    document.getElementById('cultura-management-button').addEventListener('click', function() {
+        window.location.href = 'http://localhost:8080/cultura';
+    });
+    document.getElementById('transporte-management-button').addEventListener('click', function() {
+        window.location.href = 'http://localhost:8080/transporte';
     });
 </script>
 </body>
