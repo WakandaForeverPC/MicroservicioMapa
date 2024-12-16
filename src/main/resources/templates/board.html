@@ -12,6 +12,9 @@
     <button id="water-management-button">
         <i class="fas fa-tint"></i> <!-- Icono de gota de agua -->
     </button>
+    <button id="residuos-management-button">
+        <i class="fas fa-recycle"></i> <!-- Icono de reciclaje -->
+    </button>
 </div>
 <div id="board" class="board"></div>
 <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
@@ -20,6 +23,9 @@
 <script>
     document.getElementById('water-management-button').addEventListener('click', function() {
         window.location.href = 'http://localhost:8080/agua';
+    });
+    document.getElementById('residuos-management-button').addEventListener('click', function() {
+        window.location.href = 'http://localhost:8080/residuos';
     });
 </script>
 </body>

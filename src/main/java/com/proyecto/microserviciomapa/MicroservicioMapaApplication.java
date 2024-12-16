@@ -1,7 +1,10 @@
 package com.proyecto.microserviciomapa;
 
+
 import com.proyecto.microserviciomapa.model.Building;
+import com.proyecto.microserviciomapa.model.RecyclingPoint;
 import com.proyecto.microserviciomapa.repository.BuildingRepository;
+import com.proyecto.microserviciomapa.repository.RecyclingPointRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -13,6 +16,8 @@ public class MicroservicioMapaApplication implements CommandLineRunner {
     @Autowired
     private BuildingRepository buildingRepository;
 
+    @Autowired
+    RecyclingPointRepository recyclingPointRepository;
     public static void main(String[] args) {
         SpringApplication.run(MicroservicioMapaApplication.class, args);
     }
@@ -24,7 +29,7 @@ public class MicroservicioMapaApplication implements CommandLineRunner {
         buildingRepository.save(new Building(3L, 0, 2, 0, 90, 100, "#744e3b"));
         buildingRepository.save(new Building(4L, 0, 4, 0, 90, 100, "#744e3b"));
         buildingRepository.save(new Building(5L, 0, 5, 0, 90, 100, "#744e3b"));
-        buildingRepository.save(new Building(6L, 0, 6, 0, 90, 100, "#744e3b"));
+
 
         buildingRepository.save(new Building(7L, 2, 0, 0, 90, 100, "#744e3b"));
         buildingRepository.save(new Building(8L, 2, 1, 0, 90, 100, "#744e3b"));
@@ -47,11 +52,17 @@ public class MicroservicioMapaApplication implements CommandLineRunner {
         buildingRepository.save(new Building(23L, 6, 5, 0, 90, 100, "#744e3b"));
         buildingRepository.save(new Building(24L, 6, 6, 0, 90, 100, "#744e3b"));
 
-        buildingRepository.save(new Building(25L, 8, 0, 0, 90, 100, "#744e3b"));
+
         buildingRepository.save(new Building(26L, 8, 1, 0, 90, 100, "#744e3b"));
         buildingRepository.save(new Building(27L, 8, 2, 0, 90, 100, "#744e3b"));
         buildingRepository.save(new Building(28L, 8, 4, 0, 90, 100, "#744e3b"));
         buildingRepository.save(new Building(29L, 8, 5, 0, 90, 100, "#744e3b"));
         buildingRepository.save(new Building(30L, 8, 6, 0, 90, 100, "#744e3b"));
+
+        //puntos de reciclaje
+        recyclingPointRepository.save(new RecyclingPoint(31L, 0, 6, 0, 90,
+                100, "green", "blue", "#fcf75e"));
+        recyclingPointRepository.save(new RecyclingPoint(32L, 8, 0, 0, 90,
+                100, "green", "blue", "#fcf75e"));
     }
     }

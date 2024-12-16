@@ -5,6 +5,7 @@ body {
     align-items: center;
     margin: 0;
     padding: 0;
+    background-color: #6e6e6e;  /*color fondo pantalla*/
 }
 
 #board {
@@ -138,12 +139,15 @@ body {
 .traffic-light.green {
     background-color: #00ff00; /* Color verde para el semáforo en verde */
 }
+
 #button-container {
     position: absolute;
     top: 10px;
     left: 10px;
+    display: flex;
+    gap: 10px;
 }
-
+/* boton agua */
 #water-management-button {
     padding: 20px;
     font-size: 32px;
@@ -159,4 +163,27 @@ body {
 
 #water-management-button i {
     margin-right: 5px;
+}
+/*boton reciclaje */
+
+
+#residuos-management-button {
+    padding: 20px;
+    font-size: 32px;
+    cursor: pointer;
+    background-color: #27893e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#residuos-management-button i {
+    margin-right: 5px;
+}
+.recycling-container {
+    display: inline-block;
+    margin: 0 1px;
 }
