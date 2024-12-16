@@ -12,6 +12,7 @@ body {
     display: grid;
     grid-template-columns: 130px 70px 130px 70px 130px 70px 130px 70px 130px;
     grid-template-rows: 130px 130px 130px 70px 130px 130px 130px;
+    gap: 2px;
     background-color: #aaa;
     margin-top: 20px;
 }
@@ -115,6 +116,28 @@ body {
             transparent 20px
     );
     transform: translateX(-50%);
+}
+.bus {
+    width: 60px;
+    height: 30px;
+    background-color: blue; /* Color de fondo del bus */
+    border-radius: 5px; /* Bordes redondeados */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Color del texto */
+    font-size: 14px; /* Tamaño del texto */
+    position: absolute; /* Posición absoluta para colocar en la celda */
+}
+.bus-stop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px; /* Font size for the text */
+    writing-mode: vertical-rl; /* Display text vertically */
+    text-orientation: mixed; /* Ensure text orientation is correct */
+    border: none; /* No border */
+    color: gray;
 }
 
 .car {

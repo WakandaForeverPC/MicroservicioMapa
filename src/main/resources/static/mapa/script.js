@@ -1,25 +1,31 @@
 const board = document.getElementById('board');
-const gridWidth = 9; // columnas
-const gridHeight = 7; // filas
+const gridWidth = 9; // columns
+const gridHeight = 7; // rows
 
-// Crear el tablero con carreteras y celdas
+// Create the board with roads and cells
 for (let i = 0; i < gridWidth * gridHeight; i++) {
     const cell = document.createElement('div');
-    const row = Math.floor(i / gridWidth); // Fila actual
-    const col = i % gridWidth;            // Columna actual
+    const row = Math.floor(i / gridWidth); // Current row
+    const col = i % gridWidth;            // Current column
 
     if (row === 3 && (col === 1 || col === 3 || col === 5 || col === 7)) {
-        // Intersección de carreteras horizontal y vertical
+        // Intersection of horizontal and vertical roads
         cell.classList.add('cell', 'intersection-road');
     } else if (row === 3) {
-        // Carretera horizontal
+        // Horizontal road
         cell.classList.add('cell', 'horizontal-road');
     } else if (col === 1 || col === 3 || col === 5 || col === 7) {
-        // Carreteras verticales
+        // Vertical roads
         cell.classList.add('cell', 'vertical-road');
     } else {
-        // Celda normal
+        // Normal cell
         cell.classList.add('cell');
+    }
+
+    // Apply bus stop style to specific cells
+    if ((row === 0 && col === 1) || (row === 6 && col === 7)) {
+        cell.classList.add('bus-stop');
+        cell.textContent = 'BUS'; // Add text to the bus stop
     }
 
     board.appendChild(cell);
@@ -46,6 +52,7 @@ fetch('/mapa/edificios')
         });
     })
     .catch(error => console.error('Error fetching buildings:', error));
+
 // Actualización dinámica de coches y semáforos
 function fetchAndUpdateTraffic() {
     // Limpiar elementos dinámicos
@@ -116,10 +123,41 @@ function toggleTrafficLights() {
     });
 }
 
+// Obtener y mostrar buses
+function fetchAndUpdateBuses() {
+    // Clear dynamic bus elements
+    document.querySelectorAll('.bus').forEach(element => element.remove());
+
+    fetch('/transporte/buses')
+        .then(response => response.json())
+        .then(buses => {
+            if (Array.isArray(buses)) {
+                buses.forEach(bus => {
+                    if (bus.x >= 0 && bus.x < gridWidth && bus.y >= 0 && bus.y < gridHeight) {
+                        const index = bus.y * gridWidth + bus.x;
+                        const cell = board.children[index];
+
+                        const busDiv = document.createElement('div');
+                        busDiv.classList.add('bus');
+                        busDiv.style.backgroundColor = 'blue'; // Assign bus color
+                        cell.appendChild(busDiv);
+                    }
+                });
+            } else {
+                console.error('Invalid buses response:', buses);
+            }
+        })
+        .catch(error => console.error('Error fetching buses:', error));
+}
+
+// Update buses dynamically every 2 seconds
+setInterval(fetchAndUpdateBuses, 2000);
+
 setInterval(toggleTrafficLights, 4000);
 
 // Actualizar tráfico dinámico cada 2 segundos
 setInterval(fetchAndUpdateTraffic, 2000);
+
 
 // WebSocket para actualizaciones en tiempo real
 const socket = new SockJS('/mapa/traffic-websocket');
@@ -134,6 +172,11 @@ stompClient.connect({}, () => {
     stompClient.subscribe('/topic/traffic-lights', message => {
         const lights = JSON.parse(message.body);
         toggleTrafficLights(lights);
+    });
+
+    stompClient.subscribe('/topic/transport-buses', message => {
+        const buses = JSON.parse(message.body);
+        fetchAndUpdateBuses(buses);
     });
 });
 
