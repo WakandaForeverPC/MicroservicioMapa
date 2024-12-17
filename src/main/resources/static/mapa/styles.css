@@ -343,6 +343,21 @@ body {
 #educacion-management-button i {
     margin-right: 5px;
 }
+#energia-management-button {
+    padding: 20px;
+    font-size: 32px;
+    cursor: pointer;
+    background-color: #ebf527;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#energia-management-button i {
+    margin-right: 5px;
+}
 .button {
     width: 85px;
     height: 85px;

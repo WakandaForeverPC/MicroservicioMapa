@@ -33,7 +33,10 @@
 <div id="button-container-3">
     <button id="educacion-management-button" class="button" style="background-color: #c19a6b;">
     <i class="fas fa-book"></i> <!-- Icono de educación -->
-</button>
+    </button>
+    <button id="energia-management-button" class="button" style="background-color: #ebf527;">
+        <i class="fas fa-bolt"></i> <!-- Icono de energia -->
+    </button>
 </div>
 <div id="board" class="board"></div>
 <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
@@ -61,6 +64,9 @@
     document.getElementById('educacion-management-button').addEventListener('click', function() {
         window.location.href = 'http://localhost:8080/educacion';
     });
+    document.getElementById('energia-management-button').addEventListener('click', function() {
+    window.location.href = 'http://localhost:8080/energia';
+});
 </script>
 </body>
 </html>
