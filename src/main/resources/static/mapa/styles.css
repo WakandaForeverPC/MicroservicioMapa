@@ -156,6 +156,14 @@ body {
     font-size: 14px; /* Tamaño del texto */
     position: absolute; /* Posición absoluta para colocar en la celda */
 }
+.bus.horizontal{
+    width: 60px;
+    height: 30px;
+}
+.bus.vertical{
+    width: 30px;
+    height: 60px;
+}
 .bus-stop {
     display: flex;
     align-items: center;

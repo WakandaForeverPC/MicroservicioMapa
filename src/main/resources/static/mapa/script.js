@@ -151,7 +151,14 @@ function fetchAndUpdateBuses() {
 
                         const busDiv = document.createElement('div');
                         busDiv.classList.add('bus');
-                        busDiv.style.backgroundColor = '#4682b4'; // Assign bus color
+                        busDiv.style.backgroundColor = '#4682b4';
+
+                        // Aplicar clase de dirección
+                        if (bus.direction === 'NORTH' || bus.direction === 'SOUTH') {
+                            busDiv.classList.add('vertical');
+                        } else {
+                            busDiv.classList.add('horizontal');
+                        }
                         cell.appendChild(busDiv);
                     }
                 });
