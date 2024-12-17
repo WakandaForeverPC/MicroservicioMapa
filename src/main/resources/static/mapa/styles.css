@@ -36,6 +36,33 @@ body {
     border-radius: 5px;
 }
 
+.building.hospital {
+    background-color: white;
+    position: relative;
+}
+
+.building.hospital::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 10%;
+    background-color: red;
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.building.hospital::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10%;
+    height: 50%;
+    background-color: red;
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
 .vertical-road {
     background-color: #333;
 }
@@ -145,6 +172,16 @@ body {
     height: 20px;
     position: absolute;
     border-radius: 3px;
+}
+
+.car.horizontal {
+    width: 40px;
+    height: 20px;
+}
+
+.car.vertical {
+    width: 20px;
+    height: 40px;
 }
 
 .traffic-light {
@@ -272,7 +309,7 @@ body {
     padding: 20px;
     font-size: 32px;
     cursor: pointer;
-    background-color: #ff0016;
+    background-color: #ff69b4;
     color: white;
     border: none;
     border-radius: 5px;
@@ -283,9 +320,24 @@ body {
 #salud-management-button i {
     margin-right: 5px;
 }
+#educacion-management-button {
+    padding: 20px;
+    font-size: 32px;
+    cursor: pointer;
+    background-color: #c19a6b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#educacion-management-button i {
+    margin-right: 5px;
+}
 .button {
-    width: 85px; /* Ajusta este valor según sea necesario */
-    height: 85px; /* Ajusta este valor según sea necesario */
+    width: 85px;
+    height: 85px;
     padding: 30px;
     font-size: 32px;
     cursor: pointer;
@@ -295,4 +347,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+#button-container-3 {
+    position: absolute;
+    top: 200px;
+    left: 10px;
+    display: flex;
+    gap: 10px;
+    padding: 20px;
 }

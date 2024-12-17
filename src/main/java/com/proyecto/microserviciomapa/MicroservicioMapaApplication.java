@@ -39,7 +39,7 @@ public class MicroservicioMapaApplication implements CommandLineRunner {
         buildingRepository.save(new Building(12L, 2, 6, 0, 90, 100, "#744e3b"));
 
         buildingRepository.save(new Building(13L, 4, 0, 0, 90, 100, "#744e3b"));
-        buildingRepository.save(new Building(14L, 4, 1, 0, 90, 100, "#744e3b"));
+        buildingRepository.save(new Building(14L, 4, 1, 0, 90, 100, "#c19a6b"));
         buildingRepository.save(new Building(15L, 4, 2, 0, 90, 100, "#744e3b"));
         buildingRepository.save(new Building(16L, 4, 4, 0, 90, 100, "#ff9800"));
         buildingRepository.save(new Building(17L, 4, 5, 0, 90, 100, "#744e3b"));
@@ -56,7 +56,7 @@ public class MicroservicioMapaApplication implements CommandLineRunner {
         buildingRepository.save(new Building(26L, 8, 1, 0, 90, 100, "#744e3b"));
         buildingRepository.save(new Building(27L, 8, 2, 0, 90, 100, "#744e3b"));
         buildingRepository.save(new Building(28L, 8, 4, 0, 90, 100, "#744e3b"));
-        buildingRepository.save(new Building(29L, 8, 5, 0, 90, 100, "#744e3b"));
+        buildingRepository.save(new Building(29L, 8, 5, 0, 90, 100, "#fafbfd"));
         buildingRepository.save(new Building(30L, 8, 6, 0, 90, 100, "#744e3b"));
 
         //puntos de reciclaje

@@ -16,7 +16,7 @@
         <i class="fas fa-recycle"></i> <!-- Icono de reciclaje -->
     </button>
     <button id="cultura-management-button" class="button" style="background-color: #ff9800;">
-        <i class="fas fa-book"></i> <!-- Icono de libro -->
+        <i class="fas fa-theater-masks"></i> <!-- Icono de libro -->
     </button>
 </div>
 <div id="button-container-2">
@@ -29,6 +29,11 @@
     <button id="salud-management-button" class="button" style="background-color: #ff69b4;">
         <i class="fas fa-heartbeat"></i> <!-- Icono de salud -->
     </button>
+</div>
+<div id="button-container-3">
+    <button id="educacion-management-button" class="button" style="background-color: #c19a6b;">
+    <i class="fas fa-book"></i> <!-- Icono de educación -->
+</button>
 </div>
 <div id="board" class="board"></div>
 <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
@@ -52,6 +57,9 @@
     });
     document.getElementById('salud-management-button').addEventListener('click', function() {
         window.location.href = 'http://localhost:8080/salud';
+    });
+    document.getElementById('educacion-management-button').addEventListener('click', function() {
+        window.location.href = 'http://localhost:8080/educacion';
     });
 </script>
 </body>

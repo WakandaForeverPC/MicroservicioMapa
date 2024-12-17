@@ -47,6 +47,11 @@ fetch('/mapa/edificios')
                 buildingDiv.style.height = `${building.height}px`;
                 buildingDiv.style.backgroundColor = building.color; // Asignar el color del edificio
 
+                // Aplicar clase hospital al edificio con id 29L
+                if (building.id === 29) {
+                    buildingDiv.classList.add('hospital');
+                }
+
                 cell.appendChild(buildingDiv);
             }
         });
@@ -71,7 +76,14 @@ function fetchAndUpdateTraffic() {
                         const carDiv = document.createElement('div');
                         carDiv.classList.add('car');
                         carDiv.style.backgroundColor = car.color; // Asignar el color del coche
-                        // No agregar texto al coche
+
+                        // Aplicar clase de dirección
+                        if (car.direction === 'NORTH' || car.direction === 'SOUTH') {
+                            carDiv.classList.add('vertical');
+                        } else {
+                            carDiv.classList.add('horizontal');
+                        }
+
                         cell.appendChild(carDiv);
                     }
                 });
