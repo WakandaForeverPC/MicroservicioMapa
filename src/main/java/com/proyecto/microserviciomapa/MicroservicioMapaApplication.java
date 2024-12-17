@@ -36,7 +36,7 @@ public class MicroservicioMapaApplication implements CommandLineRunner {
         buildingRepository.save(new Building(9L, 2, 2, 0, 90, 100, "#744e3b"));
         buildingRepository.save(new Building(10L, 2, 4, 0, 90, 100, "#744e3b"));
         buildingRepository.save(new Building(11L, 2, 5, 0, 90, 100, "#744e3b"));
-        buildingRepository.save(new Building(12L, 2, 6, 0, 90, 100, "#744e3b"));
+        buildingRepository.save(new Building(12L, 2, 6, 0, 90, 100, "#9b111e"));
 
         buildingRepository.save(new Building(13L, 4, 0, 0, 90, 100, "#744e3b"));
         buildingRepository.save(new Building(14L, 4, 1, 0, 90, 100, "#c19a6b"));
@@ -50,7 +50,7 @@ public class MicroservicioMapaApplication implements CommandLineRunner {
         buildingRepository.save(new Building(21L, 6, 2, 0, 90, 100, "#744e3b"));
         buildingRepository.save(new Building(22L, 6, 4, 0, 90, 100, "#744e3b"));
         buildingRepository.save(new Building(23L, 6, 5, 0, 90, 100, "#744e3b"));
-        buildingRepository.save(new Building(24L, 6, 6, 0, 90, 100, "#744e3b"));
+        buildingRepository.save(new Building(24L, 6, 6, 0, 90, 100, "#ebf527"));
 
 
         buildingRepository.save(new Building(26L, 8, 1, 0, 90, 100, "#744e3b"));
