@@ -37,6 +37,9 @@
     <button id="energia-management-button" class="button" style="background-color: #ebf527;">
         <i class="fas fa-bolt"></i> <!-- Icono de energia -->
     </button>
+    <button id="gobernanza-management-button" class="button" style="background-color: #986adc;">
+        <i class="fas fa-landmark"></i> <!-- Icono de gobernanza -->
+    </button>
 </div>
 <div id="board" class="board"></div>
 <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
@@ -66,7 +69,10 @@
     });
     document.getElementById('energia-management-button').addEventListener('click', function() {
     window.location.href = 'http://localhost:8080/energia';
-});
+    });
+    document.getElementById('gobernanza-management-button').addEventListener('click', function() {
+        window.location.href = 'http://localhost:8080/gobernanza';
+    });
 </script>
 </body>
 </html>

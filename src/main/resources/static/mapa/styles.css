@@ -450,3 +450,18 @@ body {
 .blink-blue {
     background-color: blue !important;
 }
+#gobernanza-management-button {
+    padding: 20px;
+    font-size: 32px;
+    cursor: pointer;
+    background-color: #986adc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#gobernanza-management-button i {
+    margin-right: 5px;
+}
