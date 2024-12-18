@@ -236,3 +236,59 @@ fetch('/mapa/residuos')
         }
     })
     .catch(error => console.error('Error fetching recycling points:', error));
+
+// Fetch and render police cars
+function fetchAndUpdatePoliceCars() {
+    // Clear dynamic police car elements
+    document.querySelectorAll('.police-car').forEach(element => element.remove());
+
+    // Fetch and display police cars
+    fetch('/seguridad/cars')
+        .then(response => response.json())
+        .then(policeCars => {
+            if (Array.isArray(policeCars)) {
+                policeCars.forEach(car => {
+                    if (car.x >= 0 && car.x < gridWidth && car.y >= 0 && car.y < gridHeight) {
+                        const index = car.y * gridWidth + car.x;
+                        const cell = board.children[index];
+
+                        const carDiv = document.createElement('div');
+                        carDiv.classList.add('police-car');
+                        carDiv.style.backgroundColor = 'black'; // Police car color
+
+                        // Apply direction class
+                        if (car.direction === 'NORTH' || car.direction === 'SOUTH') {
+                            carDiv.classList.add('vertical');
+                        } else {
+                            carDiv.classList.add('horizontal');
+                        }
+
+                        cell.appendChild(carDiv);
+                    }
+                });
+            } else {
+                console.error('Invalid police cars response:', policeCars);
+            }
+        })
+        .catch(error => console.error('Error fetching police cars:', error));
+}
+
+// Update police cars dynamically every 2 seconds
+setInterval(fetchAndUpdatePoliceCars, 2000);
+
+function togglePoliceLights() {
+    document.querySelectorAll('.police-car.horizontal::before, .police-car.horizontal::after, .police-car.vertical::before, .police-car.vertical::after').forEach(light => {
+        if (light.classList.contains('blink-red')) {
+            light.classList.remove('blink-red');
+            light.classList.add('blink-blue');
+        } else if (light.classList.contains('blink-blue')) {
+            light.classList.remove('blink-blue');
+            light.classList.add('blink-red');
+        } else {
+            light.classList.add('blink-red');
+        }
+    });
+}
+
+// Toggle police lights every 1 second
+setInterval(togglePoliceLights, 1000);

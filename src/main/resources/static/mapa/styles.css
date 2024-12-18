@@ -379,3 +379,74 @@ body {
     gap: 10px;
     padding: 20px;
 }
+.police-car {
+    background-color: black;
+    position: absolute;
+    border-radius: 3px;
+}
+
+.police-car.horizontal {
+    width: 40px;
+    height: 20px;
+}
+
+.police-car.horizontal::before,
+.police-car.horizontal::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transform: translateX(-50%);
+}
+
+.police-car.horizontal::before {
+    top: 4px; /* Luz roja en la parte superior */
+    background-color: red;
+}
+
+.police-car.horizontal::after {
+    bottom: 4px; /* Luz azul en la parte inferior */
+    background-color: blue;
+}
+
+.police-car.vertical {
+    width: 20px;
+    height: 40px;
+}
+
+.police-car.vertical::before,
+.police-car.vertical::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.police-car.vertical::before {
+    left: 4px; /* Luz roja en el extremo izquierdo */
+    background-color: red;
+}
+
+.police-car.vertical::after {
+    right: 4px; /* Luz azul en el extremo derecho */
+    background-color: blue;
+}
+.police-car.horizontal::before,
+.police-car.horizontal::after,
+.police-car.vertical::before,
+.police-car.vertical::after {
+    transition: background-color 0.5s;
+}
+
+.blink-red {
+    background-color: red !important;
+}
+
+.blink-blue {
+    background-color: blue !important;
+}
